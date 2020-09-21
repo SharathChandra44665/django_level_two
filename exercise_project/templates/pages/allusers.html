@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>All users</title>
+  </head>
+  <body>
+    <h4>below are the users</h4>
+    {% if all_user %}
+    <ul>
+      {% for user in all_user %}
+      <li>{{user.first_name}}</li>
+      <li>{{user.last_name}}</li>
+      <li>{{user.user_mail}}</li>
+      <br><br>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>database error</p>
+    {% endif %}
+  </body>
+</html>

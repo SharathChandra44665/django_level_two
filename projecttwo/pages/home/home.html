@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sharathchandra</title>
+    <link rel="stylesheet" href="{% static 'myfile/mystyle.css' %}">
+  </head>
+  <body>
+    <h1>Welcome {{username}}</h1>
+    <h3>below are information on accessrecord</h3>
+    {% if all_persons %}
+    <table>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>email</th>
+
+      {% for person in all_persons %}
+      <tr>
+        <td>{{person.first_name}}</td>
+        <td>{{person.last_name}}</td>
+        <td>{{person.person_mail}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No data found</p>
+    {%endif%}
+  </body>
+</html>
